@@ -4,14 +4,21 @@
 	--pink: #d8a6cb;
 	--dark-pink: #c59ece;
 	--purple: #9996cb;
+	--ofCourse: "Roboto", sans-serif;
+	/*to my project*/
+	--myProject: "Shadows Into Light", cursive;
+	--c: #ed7d31;
+	--v: #352f44;
+	--f: #5c5470;
+	--t: #faf0e6;
 }
 
 body {
-	font-family: "Roboto", sans-serif;
 	margin: 0;
 	height: 100vh;
 }
 .course-proyect {
+	font-family: var(--ofCourse);
 	background-image: linear-gradient(
 		to top,
 		#9996cb,
@@ -79,4 +86,117 @@ body {
 	transform: rotate(180deg);
 	writing-mode: vertical-lr;
 	place-items: center;
+}
+/*My project*/
+
+.myProject {
+	background-image: linear-gradient(
+		to left bottom,
+		#352f44,
+		#3e384f,
+		#48415a,
+		#524a65,
+		#5c5470
+	);
+}
+
+main {
+	display: grid;
+	grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+	height: 100%;
+}
+
+.t-l {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+.t-r {
+	grid-column: 4 / 5;
+	grid-row: 1 / 2;
+	display: grid;
+	justify-items: end;
+	/* transform: rotate(252deg);
+    
+    justify-content: start;
+     */
+}
+.b-l {
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+	display: grid;
+	align-items: end;
+}
+.b-r {
+	grid-column: 4 / 5;
+	grid-row: 4 / 5;
+	display: grid;
+	justify-items: end;
+	/*transform:  rotate(327deg); */
+}
+
+img {
+	width: 80%;
+	/* border: 1px solid #81ccf1; */
+}
+
+.main__text {
+	grid-column: 2 / 4;
+	grid-row: 2 / 4;
+	text-align: center;
+}
+
+.main__text h1 {
+	font-size: 80px;
+	font-family: var(--myProject);
+	color: var(--c);
+	letter-spacing: 4px;
+}
+
+/*El fantasma lo hizo la IA*/
+#ghost {
+	background: #fff;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: relative;
+	margin: 50px auto;
+	display: grid;
+	grid-column: 2 /4;
+	grid-row: 4/5;
+}
+
+#ghost:before,
+#ghost:after {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	width: 50px;
+	height: 20px;
+	border-radius: 100px / 40px;
+	background: #fff;
+}
+
+#ghost:before {
+	left: -30px;
+}
+
+#ghost:after {
+	right: -30px;
+}
+
+.eye {
+	width: 20px;
+	height: 20px;
+	background: #000;
+	position: absolute;
+	top: 30px;
+	border-radius: 50%;
+}
+
+.eye.left {
+	left: 20px;
+}
+
+.eye.right {
+	right: 20px;
 }
